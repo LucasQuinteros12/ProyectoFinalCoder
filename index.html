@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tienda Online</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tienda Online</h1>
+
+        <nav class="nav-bar">
+            <ul class="nav-ul">
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </span>
+                        <span class="text">Categorias</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="notifications-outline"></ion-icon>
+                        </span>
+                        <span class="text">Notificaciones</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="star-outline"></ion-icon>
+                        </span>
+                        <span class="text">Favoritos</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#formulario">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text" id="btn-account">Mi Cuenta</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <input id="search" type="text" class="input" placeholder="Buscar producto">
+
+        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+    </header>
+
+    <main id="contenedor-productos">
+        <!-- <div class="producto">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/auricularMarvo.jpg">
+                    <span class="card-title">Auricular Marvo</span>
+                    <a id="boton" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
+                </div>
+                <div class="card-content">
+                    <p>Todo el sonido Gamer acompañandote en todos tus juegos</p>
+                    <p> $5000</p>
+                </div>
+            </div>
+       </div>  -->
+    </main>
+
+    <div class="modal-container">
+        <div class="modal-close">
+            <div class="contenedor-todo" id="formulario">
+                <button id="form-cerrar"><i class="fas fa-times-circle"></i></button>
+                <div class="container-back">
+                    <div class="container-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia Sesion para entrar en la pagina</p>
+                        <button id="btn-iniciar">Iniciar Sesion</button>
+                    </div>
+                    <div class="container-register">
+                        <h3>¿No tienes una cuenta?</h3>
+                        <p>Registrate para iniciar sesion</p>
+                        <button id="btn-registrarse">Registrarse</button>
+                    </div>
+                </div>
+                <div class="container-login-register">
+                    <form action="" class="formulario-login">
+                        <h2>Iniciar Sesion</h2>
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Entrar</button>
+                    </form>
+
+                    <form class="formulario-register">
+                        <h2>Registrarse</h2>
+                        <input type="text" placeholder="Nombre Completo">
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="text" placeholder="Usuario">
+                        <input type="password" placeholder="Contraseña">
+                        <button id="boton-registro">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+                <!-- <div class="productoEnCarrito">
+                    <p>Buzo 1</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div>   -->
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <div id="terminar" style="display: flex; justify-content: flex-end;"></div>
+            <button id="finalizarCompra">Comprar</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="app.js" type="module"></script>
+    <script src="modal.js" type="module"></script>
+    <script src="stock.js" type="module"></script>
+    <script src="login.js" type="module"></script>
+    <script src="getData.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+    <script src="carritoIndex.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://kit.fontawesome.com/7b083a6b27.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
