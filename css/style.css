@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #222327;
+}
+
+header {
+    background-color: #14141a;
+    padding: 5px;
+    box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-top: 2em;
+    color: #fff;
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 500ms ease;
+}
+
+a:hover {
+    color: black;
+}
+
+.list {
+
+    list-style: none;
+    padding: 10px;
+    margin-top: -4em;
+    transition: 500ms ease;
+}
+
+.list:hover {
+    background-color: #fff;
+    border-radius: 20px;
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+.input {
+    width: 50% !important;
+}
+
+#boton-carrito {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: #14141a ;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+#boton-carrito:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+}
+
+#boton-carrito:focus {
+    outline: none;
+}
+
+#contenedor-productos {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+p {
+   text-align: center;
+}
+
+.producto {
+   max-width: 20%;
+   margin: 10px;
+   padding: 10px;
+   box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+   background-attachment: fixed;
+
+}
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all 0.5s;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    color: black;
+    padding-bottom: 5px;
+}
+
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: black;
+    border: none;
+    background-color: white;
+}
+
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+}
+
+.card .card-image .card-title {
+    color: black;
+    position: unset;
+    font-weight: bold;
+}
+
+.card-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-title{
+    margin-top: 20px;
+}
+
+.productoEnCarrito {
+    border-left: 5px solid black;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productoEnCarrito:hover {
+    border-left: 5px solid #14141a;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 20px;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+
+.boton-eliminar:focus {
+    outline: none;
+}
+
+.material-icons{
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    float: right;
+}
+
+.loading{
+    width: 50%;
+    margin: auto;
+}
+
+.contenedor-todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    transition: 0.3s;
+    transform: translateY(0%);
+}
+
+.container-back{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    background-color:  white;
+}
+
+.container-back div{
+    margin: 100px 40px;
+    color: black;
+    transition: all 500ms;
+}
+
+.container-back div p,
+.container-back div button{
+    margin-top: 30px;
+}
+
+.container-back div h3{
+    font-weight: 400;
+    font-size: 26px;
+
+}
+
+.container-back button{
+    padding: 10px 40px;
+    border: 2px solid black;
+    background:transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    transition: all 300ms;
+}
+
+.container-back button:hover{
+    background-color: black;
+    color: white;
+
+}
+
+.container-login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320,1.275);
+}
+
+.container-login-register form {
+    width: 100%;
+    padding:80px 20px;
+    background: black;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.container-login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.container-login-register form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background:white;
+    font-size: 16px;
+    outline: none;
+}
+
+.container-login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: white solid 2px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.formulario-login{
+    opacity: 1;
+    display: block;
+}
+
+.formulario-register{
+    display: none;
+}
+
+.modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-cerrar{
+    background:transparent;
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+}
+
+.modal-close{
+ transform: translateY(-200%); 
+}
+
+#finalizarCompra{
+    background-color: #14141a;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+}
+
+#finalizarCompra:hover{
+    background-color:#222327;
+    color: #fff;
+    transition: 500ms ease-in;
+}
+
+.filtro{
+    display: none;
+}
+
+
+.modal-contenedor-favoritos{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.modal-show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
+.modal-favoritos{
+    width: 90%;
+    background-color: #fff;
+    max-width: 600px;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+
+.modal-favoritos h3{
+    font-size: 2.5em;
+}
+
+#favoritosCerrar{
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 20px;
+    margin-top: -12%;
+    margin-right: -110%;
+}
+
+.notificaciones{
+    position:fixed;
+    top:0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.notificaciones h3{
+    font-size: 2.5em;
+}
+
+.notificaciones-show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
+.modal-notificaciones{
+    width: 90%;
+    background-color: #fff;
+    max-width: 600px;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+
+.modal-notificaciones p{
+    margin: 2em;
+}
+
+#notificacionesCerrar{
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 20px;
+    margin-top: -12%;
+    margin-right: -110%;
+}
+
+footer{
+    background-color: #14141a;
+    padding: 5px;
+    box-shadow: 0px 5px 4px 10px rgba(0, 0, 0, 0.3);
+}
+/*MediaQueries*/
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .container-back{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .container-back div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*Forms*/
+
+    .container-login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .container-login-register form{
+        position: relative;
+    }
+}
+
+
